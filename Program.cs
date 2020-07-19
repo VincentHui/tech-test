@@ -13,6 +13,10 @@ namespace test
 
         static void Main(string[] args)
         {
+            if (args.Length <= 0) {
+                Console.WriteLine("enter word to search in first argument eg : dotnet test.dll wordToSearch");
+                return;
+            }
             string text = txtFileContent("source.txt");
             Console.WriteLine("amount of occurances = {0}", getMatchedWordCount(text, args[0]));
         }
